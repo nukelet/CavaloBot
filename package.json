@@ -1,0 +1,27 @@
+{
+  "name": "lab_rat",
+  "version": "0.0.0",
+  "description": "A test bot to fuck around with the Discord API.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nukelets/LabRat.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Vinícius Peixoto",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nukelets/LabRat/issues"
+  },
+  "homepage": "https://github.com/nukelets/LabRat#readme",
+  "dependencies": {
+    "discord": "^0.8.2",
+    "dotenv": "^8.2.0"
+  }
+}
