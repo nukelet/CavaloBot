@@ -21,7 +21,10 @@
   },
   "homepage": "https://github.com/nukelets/LabRat#readme",
   "dependencies": {
-    "discord": "^0.8.2",
-    "dotenv": "^8.2.0"
+    "@types/node": "^14.14.7",
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.13.0",
+    "node": "^15.0.1"
   }
 }
