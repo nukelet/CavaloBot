@@ -20,23 +20,37 @@ for (const file of commandFiles)
     client.commands.set(command.name, command);
 }
 
-client.login(TOKEN);
-
-client.once('ready', () =>
-{
-    console.log('Login successful!');
-});
-
-const allowedChannels = new Discord.Collection();
+// TODO: this doesn't really kill the client when there's a login error
+client.login(TOKEN)
+    .then(() => console.log('Login successful.'))
+    .catch(() => console.log('Login error. Exiting...'));
 
 client.on('message', message =>
 {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).trim().split('/\s+/');
-    const command = args.shift().toLowerCase();
+    const str = message.content.slice(prefix.length).trim();
 
-    if (!client.commands.has(command)) return;
+    let command, args;
+
+    // check if command has arguments
+    if (str.includes(' '))
+    {
+        command = str.substr(0, str.indexOf(' '));
+        args = str.slice(command.length).trim();
+    }
+
+    else
+    {
+        command = str;
+        args = [];
+    }
+
+    if (!client.commands.has(command))
+    {
+        // message.channel.send('Command not found!');
+        return;
+    }
 
     try
     {
@@ -46,7 +60,7 @@ client.on('message', message =>
     catch (error)
     {
         console.log(error);
-        message.reply(`Unknown error while executing command "${command}".`);
+        message.reply(`unknown error while executing command "${command}".`);
     }
 
 });
