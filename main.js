@@ -43,7 +43,7 @@ client.on('message', message =>
     else
     {
         command = str;
-        args = [];
+        args = '';
     }
 
     if (!client.commands.has(command))
@@ -54,7 +54,7 @@ client.on('message', message =>
 
     try
     {
-        client.commands.get(command).execute(message, args);
+        client.commands.get(command).execute(message, args, client);
     }
 
     catch (error)

@@ -22,11 +22,14 @@
   "homepage": "https://github.com/nukelets/LabRat#readme",
   "dependencies": {
     "@types/node": "^14.14.7",
+    "axios": "^0.21.0",
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
     "eslint": "^7.13.0",
     "node": "^15.0.1",
+    "node-fetch": "^2.6.1",
     "sequelize": "^6.3.5",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.0.0",
+    "xml-js": "^1.6.11"
   }
 }
